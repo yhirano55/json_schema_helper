@@ -2,7 +2,9 @@
 
 require 'json_schema_helper/version'
 
-module JsonSchemaHelper
-  class Error < StandardError; end
-  # Your code goes here...
+begin
+  require 'rails'
+  require 'json_schema_helper/railtie'
+rescue LoadError
+  nil
 end
